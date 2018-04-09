@@ -21,6 +21,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html',
+      cache: false,
       inlineSource: '.(js|css)$',
     }),
     new HtmlWebpackInlineSourcePlugin(),
