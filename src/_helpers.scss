@@ -1,0 +1,63 @@
+@function slice($list, $start: 1, $end: length($list)) {
+  $result: ();
+
+  @if type-of($start) != number or type-of($end) != number {
+    @error 'slice error: Either `#{$start}` or `#{$end}` are not a number for the list: [#{$list}]';
+  } @else if $start > $end {
+    @error 'slice error: The start index `#{$start}` has to be lesser than or equal to the end index `#{$end}` for the list: [#{$list}]';
+  } @else if $start < 1 or $end < 1 {
+    @error 'slice error: List indexes `#{$start}` and `#{$end}` must be non-zero integers for the list: [#{$list}]';
+  } @else if $start > length($list) {
+    @error 'slice error: List index is #{$start} but list is only #{length($list)} item long for the list: [#{$list}]';
+  } @else if $end > length($list) {
+    @error 'slice error: List index is #{$end} but list is only #{length($list)} item long for the list: [#{$list}]';
+  } @else {
+    @for $i from $start through $end {
+      $result: append($result, nth($list, $i));
+    }
+  }
+
+  @return $result;
+}
+
+@function get($args...) {
+  $key: nth($args, 1);
+  $map: nth($args, -1);
+  $keys: if(length($args) > 2, slice($args, 2, length($args) - 1), null);
+
+  @if $keys {
+    @if type-of(map-get($map, $key)) != map {
+      @error 'The recursive lookup for `#{$keys}` failed, because `#{$key}` did not return a map.';
+    }
+
+    @return get(append($keys, map-get($map, $key))...);
+  }
+
+  @if not map-has-key($map, $key) {
+    @error 'The key `#{$key}` is not available in `#{$map}`.';
+  }
+
+  @return map-get($map, $key);
+}
+
+@function em($size) {
+  @return $size / 16px + 0em;
+}
+
+@function rem($size) {
+  @return $size / 16px + 0rem;
+}
+
+@function screen($screen) {
+  @return get($screen, $screens);
+}
+
+@mixin media($screen) {
+  @media (min-width: em(screen($screen))) {
+    @content;
+  }
+}
+
+@function type($args...) {
+  @return rem(get(append($args, $type)...));
+}

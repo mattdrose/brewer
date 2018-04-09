@@ -10,7 +10,7 @@ module.exports = {
   module: {
     rules: [
       { test: /\.html$/, use: 'html-loader' },
-      { test: /\.css$/, use: [MiniCssExtractPlugin.loader, 'css-loader'] },
+      { test: /\.scss$/, use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'] },
     ],
   },
   optimization: {

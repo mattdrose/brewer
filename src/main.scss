@@ -1,0 +1,51 @@
+@import './settings';
+@import './helpers';
+
+// Type
+body,
+.h-base {
+  font-size: type(base);
+
+  @include media(large) {
+    font-size: type(large, base);
+  }
+}
+
+p,
+.h-p {
+  font-size: type(p);
+
+  @include media(large) {
+    font-size: type(large, p);
+  }
+}
+
+.cta,
+.h-cta {
+  font-size: type(cta);
+
+  @include media(large) {
+    font-size: type(large, cta);
+  }
+}
+
+// Colors
+body {
+  background-color: black;
+  color: white;
+}
+
+// Layout
+
+// CTA
+.cta {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}

@@ -1,0 +1,15 @@
+$screens: (
+  large: 700px,
+);
+
+$type: (
+  base: 16px,
+  p: 24px,
+  cta: 24px,
+
+  large: (
+    base: 24px,
+    p: 50px,
+    cta: 56px,
+  ),
+);
