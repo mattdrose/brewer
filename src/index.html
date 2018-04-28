@@ -11,13 +11,15 @@
 </head>
 
 <body>
-  <header itemtype="https://schema.org/Person">
-    <h1 class="h-base" itemprop="name">Michael Brewer</h1>
+  <header class="layout" itemtype="https://schema.org/Person">
+    <div class="layout__primary">
+      <h1 class="h-base" itemprop="name">Michael Brewer</h1>
 
-    <div itemprop="telephone">+1 416 333 7884</div>
-    <div itemprop="email">michael.edmund at gmail dot com</div>
+      <div itemprop="telephone">+1 416 333 7884</div>
+      <div itemprop="email">michael.edmund at gmail dot com</div>
+    </div>
 
-    <div itemprop="hasOccupation" itemscope="" itemtype="https://schema.org/Occupation">
+    <div class="layout__secondary" itemprop="hasOccupation" itemscope="" itemtype="https://schema.org/Occupation">
       <div itemprop="name">Design, Art Direction</div>
       <div itemprop="occupationLocation">Toronto, Ontario</div>
       <div itemprop="hiringOrganization" itemscope="" itemtype="https://schema.org/Organization">
@@ -26,7 +28,7 @@
     </div>
   </header>
 
-  <div>
+  <div class="gallery">
     <button class="cta">View Work</button>
     <img src="https://placebryson.com/200/200" alt="Bryson">
     <img src="https://placebryson.com/200/200" alt="Bryson">

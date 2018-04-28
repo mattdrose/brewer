@@ -36,6 +36,34 @@ body {
 }
 
 // Layout
+// 4x3 grid
+.layout {
+  display: grid;
+  grid-template-columns: 10% auto auto 10%;
+  grid-template-rows: 10% auto 10%;
+}
+
+.layout__primary {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.layout__secondary {
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+
+.layout__primary,
+.layout__secondary {
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+// Gallery
+.gallery {
+  position: absolute;
+  left: -1000;
+}
 
 // CTA
 .cta {

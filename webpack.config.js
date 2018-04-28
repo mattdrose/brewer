@@ -1,12 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
-  mode: 'production',
-  entry: ['./main.js', './css.js'],
+  entry: './main.js',
+  mode: process.env.NODE_ENV || 'production',
   module: {
     rules: [
       { test: /\.html$/, use: 'html-loader' },
@@ -23,7 +25,10 @@ module.exports = {
       template: 'index.html',
       cache: false,
       inlineSource: '.(js|css)$',
+      alwaysWriteToDisk: true,
     }),
+    new HtmlWebpackHarddiskPlugin(),
     new HtmlWebpackInlineSourcePlugin(),
+    new OptimizeCssAssetsPlugin(),
   ],
 };
