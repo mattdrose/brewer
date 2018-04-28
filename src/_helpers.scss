@@ -58,6 +58,10 @@
   }
 }
 
-@function type($args...) {
-  @return rem(get(append($args, $type)...));
+@function type-size($args...) {
+  @return rem(get(append($args, $type-size)...));
+}
+
+@function base($args...) {
+  @return get(append($args, $base)...);
 }

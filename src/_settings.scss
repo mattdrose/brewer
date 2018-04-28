@@ -1,8 +1,13 @@
+$base: (
+  spacing: 20px,
+  line-height: 1.4,
+);
+
 $screens: (
   large: 700px,
 );
 
-$type: (
+$type-size: (
   base: 16px,
   p: 24px,
   cta: 24px,

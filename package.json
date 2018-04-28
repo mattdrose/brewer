@@ -12,7 +12,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "dev": "NODE_ENV=development webpack-dev-server --open",
+    "dev": "webpack-dev-server --open",
     "build": "webpack"
   },
   "devDependencies": {

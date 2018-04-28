@@ -1,0 +1,29 @@
+// Base
+body {
+  line-height: base(line-height);
+  margin: 0;
+}
+
+// Spacing
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hgroup,
+.hgroup,
+ul,
+ol,
+dl,
+blockquote,
+p,
+address,
+table,
+fieldset,
+figure,
+pre
+{
+  margin-top: 0;
+  margin-bottom: base(spacing);
+}

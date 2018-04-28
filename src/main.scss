@@ -1,31 +1,33 @@
 @import './settings';
 @import './helpers';
+@import './reset';
 
 // Type
 body,
 .h-base {
-  font-size: type(base);
+  font-size: type-size(base);
+  margin-bottom: 0;
 
   @include media(large) {
-    font-size: type(large, base);
+    font-size: type-size(large, base);
   }
 }
 
 p,
 .h-p {
-  font-size: type(p);
+  font-size: type-size(p);
 
   @include media(large) {
-    font-size: type(large, p);
+    font-size: type-size(large, p);
   }
 }
 
 .cta,
 .h-cta {
-  font-size: type(cta);
+  font-size: type-size(cta);
 
   @include media(large) {
-    font-size: type(large, cta);
+    font-size: type-size(large, cta);
   }
 }
 
@@ -39,8 +41,9 @@ body {
 // 4x3 grid
 .layout {
   display: grid;
-  grid-template-columns: 10% auto auto 10%;
-  grid-template-rows: 10% auto 10%;
+  grid-template-columns: 10% auto 20% auto 10%;
+  grid-template-rows: 10vh auto 10vh;
+  min-height: 100vh;
 }
 
 .layout__primary {
@@ -49,8 +52,8 @@ body {
 }
 
 .layout__secondary {
-  grid-column-start: 3;
-  grid-column-end: 4;
+  grid-column-start: 4;
+  grid-column-end: 5;
 }
 
 .layout__primary,
@@ -62,7 +65,41 @@ body {
 // Gallery
 .gallery {
   position: absolute;
-  left: -1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+
+  display: grid;
+  grid-template-columns: 10% repeat(10, (80% / 10)) 10%;
+  grid-template-rows: 10vh repeat(10, (80vh / 10)) 10vh;
+}
+
+.gallery__cta {
+  grid-row-start: 1;
+  grid-row-end: end;
+  grid-column-start: 1;
+  grid-column-end: end;
+  place-self: center;
+}
+
+.gallery__item {
+  grid-row-start: 3;
+  grid-column-start: 3;
+  grid-row-end: end;
+  grid-column-end: end;
+
+  // Trying to make it random :P
+  @for $i from 1 through 4 {
+    &:nth-child(#{$i}n + #{$i}) {
+      grid-row-start: #{$i + 1};
+    }
+
+    &:nth-child(#{$i}n + #{$i + 1}) {
+      grid-column-start: #{$i + 2};
+    }
+  }
 }
 
 // CTA
