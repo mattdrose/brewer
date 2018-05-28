@@ -1,3 +1,12 @@
 import './main.scss';
 
-console.log('Brew brew mc brewy');
+fetch(`${LAMBDA_ENDPOINT}images`, {
+  method: 'POST',
+  headers: new Headers({
+    'Content-Type': 'application/json'
+  })
+})
+.then((response) => response.json())
+.then((data) => console.log(data))
+.catch((error) => console.error('Error:', error));
+

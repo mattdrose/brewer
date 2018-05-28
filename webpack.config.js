@@ -1,4 +1,6 @@
+require('dotenv').config();
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
@@ -30,5 +32,8 @@ module.exports = {
     new HtmlWebpackHarddiskPlugin(),
     new HtmlWebpackInlineSourcePlugin(),
     new OptimizeCssAssetsPlugin(),
+    new webpack.DefinePlugin({
+      LAMBDA_ENDPOINT: JSON.stringify(process.env.LAMBDA_ENDPOINT),
+    }),
   ],
 };
