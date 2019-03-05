@@ -14,27 +14,27 @@
   "scripts": {
     "lambda-serve": "netlify-lambda serve lambda",
     "dev": "NODE_ENV=development concurrently \"webpack-dev-server --open\" \"yarn run lambda-serve\"",
-    "build": "NODE_ENV=production webpack && netlify-lambda build lambda-src"
+    "build": "NODE_ENV=production webpack && netlify-lambda build lambda"
   },
   "devDependencies": {
-    "concurrently": "^3.5.1",
+    "concurrently": "^3.6.1",
     "css-loader": "^0.28.11",
     "html-loader": "^0.5.5",
     "html-webpack-harddisk-plugin": "^0.2.0",
     "html-webpack-inline-source-plugin": "^0.0.10",
-    "html-webpack-plugin": "^3.0.7",
-    "install": "^0.11.0",
+    "html-webpack-plugin": "^3.2.0",
+    "install": "^0.11.2",
     "mini-css-extract-plugin": "^0.2.0",
-    "netlify-lambda": "^0.4.0",
-    "node-sass": "^4.8.3",
-    "optimize-css-assets-webpack-plugin": "^4.0.0",
+    "netlify-lambda": "^1.4.2",
+    "node-sass": "^4.11.0",
+    "optimize-css-assets-webpack-plugin": "^4.0.3",
     "sass-loader": "^6.0.7",
-    "webpack": "^4.1.1",
-    "webpack-cli": "^2.0.12",
-    "webpack-dev-server": "^3.1.3"
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
-    "cloudinary": "^1.11.0",
+    "cloudinary": "^1.13.2",
     "dotenv": "^5.0.1"
   }
 }
