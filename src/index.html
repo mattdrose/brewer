@@ -5,31 +5,64 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Foo</title>
 
+  <link rel="preload" href="fonts/calibre-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <meta name="description" content="Foo">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="robots" content="noindex, nofollow">
 </head>
 
-<body>
-  <header class="layout" itemtype="https://schema.org/Person">
-    <div class="layout__primary">
-      <h1 class="h-base" itemprop="name">Michael Brewer</h1>
+<body itemscope itemtype="https://schema.org/Person">
+  <header>
+    <div>
+      <h1 class="c-dark">Michael Brewer</h1>
 
-      <div itemprop="telephone">+1 416 333 7884</div>
-      <div itemprop="email">michael.edmund at gmail dot com</div>
-    </div>
+      <div>Simple &amp; Useful</div>
+      <div>&copy;2019</div>
 
-    <div class="layout__secondary">
-      <div itemprop="name">Design, Art Direction</div>
-      <div itemprop="occupationLocation">Toronto, Ontario</div>
-      <div itemprop="hiringOrganization" itemscope="" itemtype="https://schema.org/Organization">
-        <span itemprop="name">Shopify</span>
+      <div itemprop="affiliation" itemscope itemtype="https://schema.org/Organization">
+        <div itemprop="legalName">Shopify</div>
+        <div itemprop="location">Toronto, Canada</div>
       </div>
+
+      <div>0:00 AM</div>
     </div>
+
+    <nav>
+      <ul>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <div class="gallery">
+  <main>
+    <h2>About</h2>
+    <p itemprop="description">Michael Brewer handles the creation of elegant and useful experiences across all mediums at Shopify in Toronto, Canada.</p>
+
+    <h2>Contact</h2>
+    <div>
+      <div itemprop="name">Michael Brewer</div>
+      <div>
+        <a href="mailto:michael.edmund@gmail.com" itemprop="email">michael.edmund@gmail.com</a>
+      </div>
+      <div itemprop="telephone">+1 416 333 7884</div>
+    </div>
+
+    <h2>Work</h2>
+    <div itemscope itemtype="http://schema.org/VisualArtwork">
+      <h3 itemprop="name">Shopify Workroom</h3>
+      <div>Visual Direction</div>
+      <img itemprop="image" src="" alt="">
+      <div><span itemprop="position">1</span> of 10</div>
+    </div>
+  </main>
+
+  <footer>
+    <a href="https://dribbble.com/michaelbrewer">See my work on Dribbble</a>
+  </footer>
+
+  <!-- <div class="gallery">
     <button class="gallery__cta cta">View Work</button>
-  </div>
+  </div> -->
 </body>
 </html>
