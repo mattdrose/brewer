@@ -10,6 +10,9 @@ const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
+  devServer: {
+    open: true,
+  },
   entry: './main.js',
   mode: process.env.NODE_ENV || 'production',
   module: {
