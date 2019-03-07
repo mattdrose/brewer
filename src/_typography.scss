@@ -1,0 +1,43 @@
+@font-face {
+  font-family: 'Calibre';
+  src: url('/fonts/calibre-regular.woff2') format('woff2'),
+       url('/fonts/calibre-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body,
+.h-base {
+  font-family: 'Calibre', Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: type-size(base);
+
+  @include media(large) {
+    font-size: type-size(large, base);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h {
+  font-size: type-size(base);
+  font-weight: normal;
+
+  @include media(large) {
+    font-size: type-size(large, base);
+  }
+}
+
+p,
+.h-p {
+  font-size: type-size(p);
+
+  @include media(large) {
+    font-size: type-size(large, p);
+  }
+}

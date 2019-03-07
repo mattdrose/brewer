@@ -1,40 +1,16 @@
 @import './settings';
 @import './helpers';
 @import './reset';
-
-// Type
-body,
-.h-base {
-  font-size: type-size(base);
-  margin-bottom: 0;
-
-  @include media(large) {
-    font-size: type-size(large, base);
-  }
-}
-
-p,
-.h-p {
-  font-size: type-size(p);
-
-  @include media(large) {
-    font-size: type-size(large, p);
-  }
-}
-
-.cta,
-.h-cta {
-  font-size: type-size(cta);
-
-  @include media(large) {
-    font-size: type-size(large, cta);
-  }
-}
+@import './typography';
 
 // Colors
 body {
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: #909090;
+}
+
+.c-dark {
+  color: #383434;
 }
 
 // Layout
