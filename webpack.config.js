@@ -43,9 +43,6 @@ module.exports = resources.images().then((images) => {
       new CopyPlugin([
         { from: 'fonts', to: 'fonts' },
       ]),
-      new webpack.DefinePlugin({
-        LAMBDA_ENDPOINT: JSON.stringify(process.env.LAMBDA_ENDPOINT),
-      }),
     ],
   };
 })

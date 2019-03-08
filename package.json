@@ -12,34 +12,29 @@
   },
   "license": "MIT",
   "scripts": {
-    "lambda-serve": "netlify-lambda serve lambda",
-    "dev": "NODE_ENV=development concurrently \"webpack-dev-server\" \"yarn run lambda-serve\"",
-    "build": "NODE_ENV=production webpack && netlify-lambda build lambda"
+    "dev": "NODE_ENV=development webpack-dev-server",
+    "build": "NODE_ENV=production webpack"
   },
   "devDependencies": {
-    "concurrently": "^3.6.1",
+    "cloudinary": "^1.13.2",
     "copy-webpack-plugin": "^5.0.0",
     "css-loader": "^0.28.11",
+    "dotenv": "^5.0.1",
+    "handlebars": "^4.1.0",
+    "handlebars-loader": "^1.7.1",
     "html-loader": "^0.5.5",
     "html-webpack-harddisk-plugin": "^0.2.0",
     "html-webpack-inline-source-plugin": "^0.0.10",
     "html-webpack-plugin": "^3.2.0",
     "install": "^0.11.2",
+    "lazysizes": "^4.1.6",
+    "lodash": "^4.17.11",
     "mini-css-extract-plugin": "^0.4.0",
-    "netlify-lambda": "^1.4.2",
     "node-sass": "^4.11.0",
     "optimize-css-assets-webpack-plugin": "^4.0.3",
     "sass-loader": "^6.0.7",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.1"
-  },
-  "dependencies": {
-    "cloudinary": "^1.13.2",
-    "dotenv": "^5.0.1",
-    "handlebars": "^4.1.0",
-    "handlebars-loader": "^1.7.1",
-    "lazysizes": "^4.1.6",
-    "lodash": "^4.17.11"
   }
 }

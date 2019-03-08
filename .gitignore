@@ -1,7 +1,6 @@
 .DS_Store
 node_modules
 dist
-lambda-dist
 yarn-error.log
 
 # Keep it secret, keep it safe

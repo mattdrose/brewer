@@ -3,4 +3,3 @@
 [build]
   command = "yarn build"
   publish = "dist"
-  functions = "lambda-dist"
