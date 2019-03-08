@@ -13,80 +13,154 @@ body {
   color: #383434;
 }
 
+// Links
+a {
+  color: inherit;
+  text-decoration: underline;
+
+  &:hover,
+  &:active,
+  &:focus {
+    font-weight: bold;
+  }
+}
+
 // Layout
 // 4x3 grid
 .layout {
-  display: grid;
-  grid-template-columns: 10% auto 20% auto 10%;
-  grid-template-rows: 10vh auto 10vh;
-  min-height: 100vh;
+  padding: base(spacing);
+  padding-top: 75px;
 }
 
-.layout__primary {
-  grid-column-start: 2;
-  grid-column-end: 3;
+.header {
+  margin-bottom: base(spacing) * 2;
 }
 
-.layout__secondary {
-  grid-column-start: 4;
-  grid-column-end: 5;
+.header__section {
+  margin-bottom: base(spacing);
 }
 
-.layout__primary,
-.layout__secondary {
-  grid-row-start: 2;
-  grid-row-end: 3;
+.header__section--1,
+.header__section--3 {
+  margin-bottom: base(spacing) * 2;
 }
 
-// Gallery
-.gallery {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: -1;
-
-  display: grid;
-  grid-template-columns: 10% repeat(10, (80% / 10)) 10%;
-  grid-template-rows: 10vh repeat(10, (80vh / 10)) 10vh;
+.main {
+  margin-bottom: base(spacing);
 }
 
-.gallery__cta {
-  grid-row-start: 1;
-  grid-row-end: end;
-  grid-column-start: 1;
-  grid-column-end: end;
-  place-self: center;
+/*ul*/.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.gallery__item {
-  grid-row-start: 3;
-  grid-column-start: 3;
-  grid-row-end: end;
-  grid-column-end: end;
+.menu__item {
+  margin-right: base(spacing);
 
-  // Trying to make it random :P
-  @for $i from 1 through 4 {
-    &:nth-child(#{$i}n + #{$i}) {
-      grid-row-start: #{$i + 1};
-    }
+  > a {
+    text-decoration: none;
 
-    &:nth-child(#{$i}n + #{$i + 1}) {
-      grid-column-start: #{$i + 2};
+    &.is-active {
+      font-weight: bold;
     }
   }
 }
 
-// CTA
-.cta {
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  color: inherit;
-  background: none;
-  text-transform: uppercase;
-  cursor: pointer;
+.image-placeholder {
+  display: block;
+  height: 300px;
+  background: #ddd;
 }
+
+.gallery__item {
+  margin-bottom: base(spacing);
+}
+
+.gallery__image {
+  margin-left: - base(spacing);
+  margin-right: - base(spacing);
+  margin-bottom: base(spacing) / 2;
+}
+
+.gallery__heading {
+  margin-bottom: 0;
+}
+
+.gallery__description {}
+// .layout {
+//   display: grid;
+//   grid-template-columns: 10% auto 20% auto 10%;
+//   grid-template-rows: 10vh auto 10vh;
+//   min-height: 100vh;
+// }
+
+// .layout__primary {
+//   grid-column-start: 2;
+//   grid-column-end: 3;
+// }
+
+// .layout__secondary {
+//   grid-column-start: 4;
+//   grid-column-end: 5;
+// }
+
+// .layout__primary,
+// .layout__secondary {
+//   grid-row-start: 2;
+//   grid-row-end: 3;
+// }
+
+// Gallery
+// .gallery {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100vh;
+//   z-index: -1;
+
+//   display: grid;
+//   grid-template-columns: 10% repeat(10, (80% / 10)) 10%;
+//   grid-template-rows: 10vh repeat(10, (80vh / 10)) 10vh;
+// }
+
+// .gallery__cta {
+//   grid-row-start: 1;
+//   grid-row-end: end;
+//   grid-column-start: 1;
+//   grid-column-end: end;
+//   place-self: center;
+// }
+
+// .gallery__item {
+//   grid-row-start: 3;
+//   grid-column-start: 3;
+//   grid-row-end: end;
+//   grid-column-end: end;
+
+//   // Trying to make it random :P
+//   @for $i from 1 through 4 {
+//     &:nth-child(#{$i}n + #{$i}) {
+//       grid-row-start: #{$i + 1};
+//     }
+
+//     &:nth-child(#{$i}n + #{$i + 1}) {
+//       grid-column-start: #{$i + 2};
+//     }
+//   }
+// }
+
+// // CTA
+// .cta {
+//   display: inline-block;
+//   vertical-align: middle;
+//   margin: 0;
+//   padding: 0;
+//   border: 0;
+//   color: inherit;
+//   background: none;
+//   text-transform: uppercase;
+//   cursor: pointer;
+// }

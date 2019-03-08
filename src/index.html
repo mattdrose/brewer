@@ -11,53 +11,67 @@
   <meta name="robots" content="noindex, nofollow">
 </head>
 
-<body itemscope itemtype="https://schema.org/Person">
-  <header>
-    <div>
+<body itemscope itemtype="https://schema.org/Person" class="layout">
+  <header class="layout__header header">
+    <section class="header__section header__section--1">
       <h1 class="c-dark">Michael Brewer</h1>
+    </section>
 
+    <section class="header__section header__section--2">
       <div>Simple &amp; Useful</div>
       <div>&copy;2019</div>
+    </section>
 
-      <div itemprop="affiliation" itemscope itemtype="https://schema.org/Organization">
-        <div itemprop="legalName">Shopify</div>
-        <div itemprop="location">Toronto, Canada</div>
-      </div>
-
+    <section itemprop="affiliation" itemscope itemtype="https://schema.org/Organization" class="header__section header__section--3">
+      <div itemprop="legalName">Shopify</div>
+      <div itemprop="location">Toronto, Canada</div>
       <div>0:00 AM</div>
-    </div>
+    </section>
 
-    <nav>
-      <ul>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
+    <nav class="header__section header__section--4">
+      <ul class="menu c-dark">
+        <li class="menu__item"><a class="is-active" href="/">Work</a></li>
+        <li class="menu__item"><a href="/about">About</a></li>
+        <li class="menu__item"><a href="/contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <h2>About</h2>
-    <p itemprop="description">Michael Brewer handles the creation of elegant and useful experiences across all mediums at Shopify in Toronto, Canada.</p>
-
-    <h2>Contact</h2>
-    <div>
-      <div itemprop="name">Michael Brewer</div>
-      <div>
-        <a href="mailto:michael.edmund@gmail.com" itemprop="email">michael.edmund@gmail.com</a>
+  <main class="main layout__main">
+    <section class="main__section gallery" itemscope itemtype="http://schema.org/VisualArtwork">
+      <div class="gallery__item">
+        <span class="gallery__image image-placeholder" itemprop="image"></span>
+        <h3 class="gallery__heading" itemprop="name">Shopify Workroom</h3>
+        <div class="gallery__description">Visual Direction</div>
+        <div><span itemprop="position">1</span> of 10</div>
       </div>
-      <div itemprop="telephone">+1 416 333 7884</div>
-    </div>
 
-    <h2>Work</h2>
-    <div itemscope itemtype="http://schema.org/VisualArtwork">
-      <h3 itemprop="name">Shopify Workroom</h3>
-      <div>Visual Direction</div>
-      <img itemprop="image" src="" alt="">
-      <div><span itemprop="position">1</span> of 10</div>
-    </div>
+      <div class="gallery__item">
+        <span class="gallery__image image-placeholder" itemprop="image"></span>
+        <h3 class="gallery__heading" itemprop="name">Shopify Workroom</h3>
+        <div class="gallery__description">Visual Direction</div>
+        <div><span itemprop="position">2</span> of 10</div>
+      </div>
+    </section>
+
+    <section class="main__section">
+      <h2>About</h2>
+      <p itemprop="description">Michael Brewer handles the creation of elegant and useful experiences across all mediums at Shopify in Toronto, Canada.</p>
+    </section>
+
+    <section class="main__section">
+      <h2>Contact</h2>
+      <div>
+        <div itemprop="name">Michael Brewer</div>
+        <div>
+          <a href="mailto:michael.edmund@gmail.com" itemprop="email">michael.edmund@gmail.com</a>
+        </div>
+        <div itemprop="telephone">+1 416 333 7884</div>
+      </div>
+    </section>
   </main>
 
-  <footer>
+  <footer class="footer layout__footer">
     <a href="https://dribbble.com/michaelbrewer">See my work on Dribbble</a>
   </footer>
 
