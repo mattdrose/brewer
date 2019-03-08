@@ -73,17 +73,13 @@ a {
   }
 }
 
-.image-placeholder {
-  display: block;
-  height: 300px;
-  background: #ddd;
-}
-
 .gallery__item {
   margin-bottom: base(spacing);
 }
 
 .gallery__image {
+  display: block;
+  width: 100%;
   margin-bottom: base(spacing) / 2;
 }
 

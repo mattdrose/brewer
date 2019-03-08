@@ -37,6 +37,9 @@
   "dependencies": {
     "cloudinary": "^1.13.2",
     "dotenv": "^5.0.1",
-    "lazysizes": "^4.1.6"
+    "handlebars": "^4.1.0",
+    "handlebars-loader": "^1.7.1",
+    "lazysizes": "^4.1.6",
+    "lodash": "^4.17.11"
   }
 }
