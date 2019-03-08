@@ -32,6 +32,11 @@ a {
   padding-top: 75px;
 }
 
+.layout__bleed {
+  margin-left: - base(spacing);
+  margin-right: - base(spacing);
+}
+
 .header {
   margin-bottom: base(spacing) * 2;
 }
@@ -79,8 +84,6 @@ a {
 }
 
 .gallery__image {
-  margin-left: - base(spacing);
-  margin-right: - base(spacing);
   margin-bottom: base(spacing) / 2;
 }
 

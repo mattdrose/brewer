@@ -1,4 +1,5 @@
 import './main.scss';
+import 'lazySizes';
 
 fetch(`${LAMBDA_ENDPOINT}images`, {
   method: 'POST',

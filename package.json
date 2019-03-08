@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "cloudinary": "^1.13.2",
-    "dotenv": "^5.0.1"
+    "dotenv": "^5.0.1",
+    "lazysizes": "^4.1.6"
   }
 }

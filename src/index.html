@@ -40,17 +40,17 @@
   <main class="main layout__main">
     <section class="main__section gallery" itemscope itemtype="http://schema.org/VisualArtwork">
       <div class="gallery__item">
-        <span class="gallery__image image-placeholder" itemprop="image"></span>
+        <div class="layout__bleed">
+          <img class="gallery__image lazyload"
+            data-sizes="auto"
+            data-src="https://www.placebryson.com/320/240"
+            data-srcset="https://www.placebryson.com/320/240 300w,
+            https://www.placebryson.com/640/480 600w,
+            https://www.placebryson.com/960/720 900w" />
+        </div>
         <h3 class="gallery__heading" itemprop="name">Shopify Workroom</h3>
         <div class="gallery__description">Visual Direction</div>
         <div><span itemprop="position">1</span> of 10</div>
-      </div>
-
-      <div class="gallery__item">
-        <span class="gallery__image image-placeholder" itemprop="image"></span>
-        <h3 class="gallery__heading" itemprop="name">Shopify Workroom</h3>
-        <div class="gallery__description">Visual Direction</div>
-        <div><span itemprop="position">2</span> of 10</div>
       </div>
     </section>
 
