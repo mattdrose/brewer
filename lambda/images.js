@@ -22,7 +22,7 @@ const headers = {
   'Access-Control-Allow-Headers': 'Content-Type',
 };
 
-if (process.env.NODE_ENV == 'development') {
+if (process.env.NODE_ENV != 'development') {
   headers['Access-Control-Allow-Origin'] = '*';
 }
 
