@@ -38,9 +38,10 @@
   </header>
 
   <main class="main layout__main">
-    <section class="main__section gallery" itemscope itemtype="http://schema.org/VisualArtwork">
+    <section class="main__section gallery" data-gallery itemscope itemtype="http://schema.org/VisualArtwork">
       {{#each images}}
-        <div class="gallery__item">
+        <div class="gallery__item {{#unless @index}} is-active{{/unless}}"
+          data-gallery-item data-gallery-token="{{tokenize title}}">
           <div class="layout__bleed">
             <img class="gallery__image lazyload"
               alt="{{alt}}"
@@ -56,8 +57,8 @@
           <h3 class="gallery__heading" itemprop="name">{{title}}</h3>
           <div class="gallery__description">{{contribution}}</div>
           <div><span itemprop="position">{{increment @index}}</span> of 10</div>
-        {{/each}}
-      </div>
+        </div>
+      {{/each}}
     </section>
 
     <section class="main__section">

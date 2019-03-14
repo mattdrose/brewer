@@ -54,6 +54,7 @@ a {
   margin-bottom: base(spacing);
 }
 
+// Menu
 /*ul*/.menu {
   display: flex;
   list-style: none;
@@ -73,8 +74,15 @@ a {
   }
 }
 
+// Gallery
 .gallery__item {
+  display: none;
   margin-bottom: base(spacing);
+  cursor: pointer;
+
+  &.is-active {
+    display: block;
+  }
 }
 
 .gallery__image {
@@ -88,6 +96,7 @@ a {
 }
 
 .gallery__description {}
+
 // .layout {
 //   display: grid;
 //   grid-template-columns: 10% auto 20% auto 10%;
