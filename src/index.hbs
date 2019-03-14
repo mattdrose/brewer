@@ -37,22 +37,26 @@
     </nav>
   </header>
 
-  {{ imagesString }}
-
   <main class="main layout__main">
     <section class="main__section gallery" itemscope itemtype="http://schema.org/VisualArtwork">
-      <div class="gallery__item">
-        <div class="layout__bleed">
-          <img class="gallery__image lazyload"
-            data-sizes="auto"
-            data-src="https://www.placebryson.com/320/240"
-            data-srcset="https://www.placebryson.com/320/240 300w,
-            https://www.placebryson.com/640/480 600w,
-            https://www.placebryson.com/960/720 900w" />
-        </div>
-        <h3 class="gallery__heading" itemprop="name">Shopify Workroom</h3>
-        <div class="gallery__description">Visual Direction</div>
-        <div><span itemprop="position">1</span> of 10</div>
+      {{#each images}}
+        <div class="gallery__item">
+          <div class="layout__bleed">
+            <img class="gallery__image lazyload"
+              alt="{{alt}}"
+              data-sizes="auto"
+              data-src="{{sizes.400w}}"
+              data-srcset="{{sizes.400w}} 400w,
+              {{sizes.600w}} 600w, 
+              {{sizes.800w}} 800w, 
+              {{sizes.1000w}} 1000w, 
+              {{sizes.1200w}} 1200w, 
+              {{sizes.1400w}} 1400w" />
+          </div>
+          <h3 class="gallery__heading" itemprop="name">{{title}}</h3>
+          <div class="gallery__description">{{contribution}}</div>
+          <div><span itemprop="position">{{increment @index}}</span> of 10</div>
+        {{/each}}
       </div>
     </section>
 

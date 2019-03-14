@@ -30,7 +30,7 @@ async function images() {
     contribution: _.get(image, 'context.custom.contribution') || '',
     alt: _.get(image, 'context.custom.alt') || '',
     sizes: [400, 600, 800, 1000, 1200, 1400].reduce((acc, width) => {
-      acc[width] = cloudinary.url(image.public_id, {
+      acc[`${width}w`] = cloudinary.url(image.public_id, {
         secure: true,
         width,
       });

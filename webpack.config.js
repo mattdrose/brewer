@@ -16,7 +16,15 @@ module.exports = resources.images().then((images) => {
     mode: process.env.NODE_ENV || 'production',
     module: {
       rules: [
-        { test: /\.hbs$/, loader: 'handlebars-loader' },
+        { 
+          test: /\.hbs$/, 
+          loader: 'handlebars-loader',
+          query: { 
+            helperDirs: [
+              __dirname + '/helpers',
+            ]
+          },
+        },
         { test: /\.scss$/, use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'] },
       ],
     },
@@ -29,10 +37,7 @@ module.exports = resources.images().then((images) => {
         title: 'Homepage',
         filename: 'index.html',
         template: 'index.hbs',
-        templateParameters: {
-          images,
-          imagesString: JSON.stringify(images),
-        },
+        templateParameters: {images},
         cache: false,
         inlineSource: '.(js|css)$',
         alwaysWriteToDisk: true,
