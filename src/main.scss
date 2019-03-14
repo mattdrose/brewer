@@ -74,6 +74,15 @@ a {
   }
 }
 
+// Tabs
+.tabs-target {
+  display: none;
+
+  &.is-active {
+    display: block;
+  }
+}
+
 // Gallery
 .gallery__item {
   display: none;

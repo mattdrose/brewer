@@ -14,6 +14,9 @@ module.exports = resources.images().then((images) => {
     context: path.resolve(__dirname, 'src'),
     entry: './main.js',
     mode: process.env.NODE_ENV || 'production',
+    devServer: {
+      historyApiFallback: true,
+    },
     module: {
       rules: [
         { 

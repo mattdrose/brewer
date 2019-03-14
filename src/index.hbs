@@ -29,16 +29,16 @@
     </section>
 
     <nav class="header__section header__section--4">
-      <ul class="menu c-dark">
-        <li class="menu__item"><a class="is-active" href="/">Work</a></li>
-        <li class="menu__item"><a href="/about">About</a></li>
-        <li class="menu__item"><a href="/contact">Contact</a></li>
+      <ul class="menu c-dark" data-tabs>
+        <li class="menu__item"><a class="is-active" href="/" data-tabs-trigger>Work</a></li>
+        <li class="menu__item"><a href="/about" data-tabs-trigger>About</a></li>
+        <li class="menu__item"><a href="/contact" data-tabs-trigger>Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main class="main layout__main">
-    <section class="main__section gallery" data-gallery itemscope itemtype="http://schema.org/VisualArtwork">
+    <section class="main__section gallery tabs-target is-active" data-tabs-target data-tabs-target-name='/' data-gallery itemscope itemtype="http://schema.org/VisualArtwork">
       {{#each images}}
         <div class="gallery__item {{#unless @index}} is-active{{/unless}}"
           data-gallery-item data-gallery-token="{{tokenize title}}">
@@ -61,12 +61,12 @@
       {{/each}}
     </section>
 
-    <section class="main__section">
+    <section class="main__section tabs-target" data-tabs-target data-tabs-target-name='/about'>
       <h2>About</h2>
       <p itemprop="description">Michael Brewer handles the creation of elegant and useful experiences across all mediums at Shopify in Toronto, Canada.</p>
     </section>
 
-    <section class="main__section">
+    <section class="main__section tabs-target" data-tabs-target data-tabs-target-name='/contact'>
       <h2>Contact</h2>
       <div>
         <div itemprop="name">Michael Brewer</div>
