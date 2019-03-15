@@ -3,6 +3,7 @@ import 'lazySizes';
 import Gallery from './javascripts/gallery';
 import Router from './javascripts/router';
 import Tabs from './javascripts/tabs';
+import Clock from './javascripts/clock';
 
 const $ = document.querySelector.bind(document);
 
@@ -26,4 +27,10 @@ router.on('/about', 'Michael Brewer | About', () => {
 });
 router.on('/contact', 'Michael Brewer | Contact', () => {
   tabs.current = '/contact';
+});
+
+// Clock
+const clockEl = $('[data-clock]');
+new Clock((time) => {
+  clockEl.innerHTML = time;
 });

@@ -25,7 +25,7 @@
     <section itemprop="affiliation" itemscope itemtype="https://schema.org/Organization" class="header__section header__section--3">
       <div itemprop="legalName">Shopify</div>
       <div itemprop="location">Toronto, Canada</div>
-      <div>0:00 AM</div>
+      <div data-clock>0:00 AM</div>
     </section>
 
     <nav class="header__section header__section--4">
@@ -58,7 +58,7 @@
             <div class="w-gallery__description main-inner__description">
               <h3 class="gallery__heading" itemprop="name">{{title}}</h3>
               <div class="gallery__description">{{contribution}}</div>
-              <div><span itemprop="position">{{increment @index}}</span> of 10</div>
+              <div><span itemprop="position">{{increment @index}}</span> of {{../images.length}}</div>
             </div>
           </div>
         </div>
