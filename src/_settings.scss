@@ -1,10 +1,15 @@
 $base: (
   spacing: 30px,
   line-height: 1.4,
+
+  xlarge: (
+    spacing: 4vw,
+  ),
 );
 
 $screens: (
   large: 700px,
+  xlarge: 1600px,
 );
 
 $type-size: (
@@ -14,5 +19,10 @@ $type-size: (
   large: (
     base: 24px,
     p: 46px,
+  ),
+
+  xlarge: (
+    base: 1.7vw,
+    p: 2.5vw,
   ),
 );

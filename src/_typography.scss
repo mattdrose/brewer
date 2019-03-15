@@ -16,6 +16,10 @@ body,
   @include media(large) {
     font-size: type-size(large, base);
   }
+
+  @include media(xlarge) {
+    font-size: type-size(xlarge, base);
+  }
 }
 
 h1,
@@ -31,13 +35,22 @@ h6,
   @include media(large) {
     font-size: type-size(large, base);
   }
+
+  @include media(xlarge) {
+    font-size: type-size(xlarge, base);
+  }
 }
 
 p,
 .h-p {
+  color: #383434;
   font-size: type-size(p);
 
   @include media(large) {
     font-size: type-size(large, p);
+  }
+
+  @include media(xlarge) {
+    font-size: type-size(xlarge, p);
   }
 }

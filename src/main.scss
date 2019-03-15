@@ -38,6 +38,11 @@ a {
     grid-template-rows: 30% 70%;
     height: calc(100vh - #{base(spacing) * 5});
   }
+
+  @include media(xlarge) {
+    padding: 5vw;
+    height: calc(100vh - 10vw);
+  }
 }
 
 @include media(large) {
@@ -141,6 +146,10 @@ a {
       font-weight: bold;
     }
   }
+
+  @include media(xlarge) {
+    margin-right: base(xlarge, spacing);
+  }
 }
 
 // Tabs
@@ -184,6 +193,13 @@ a {
     margin-left: 0;
     margin-right: - base(spacing) * 2.5;
     margin-bottom: - base(spacing) * 2.5;
+  }
+
+  @include media(xlarge) {
+    overflow: hidden;
+    margin-left: 0;
+    margin-right: -5vw;
+    margin-bottom: -5vw;
   }
 }
 

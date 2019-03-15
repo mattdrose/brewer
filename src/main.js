@@ -19,7 +19,7 @@ tabs.init();
 
 // Router
 const router = new Router();
-router.on('/', 'Michael Brewer | Designer | Toronto, Canada', () => {
+router.on('/', 'Michael Brewer | Designer from Toronto, Canada', () => {
   tabs.current = '/';
 });
 router.on('/about', 'Michael Brewer | About', () => {

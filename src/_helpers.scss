@@ -59,7 +59,9 @@
 }
 
 @function type-size($args...) {
-  @return rem(get(append($args, $type-size)...));
+  $size: get(append($args, $type-size)...);
+  @if unit($size) == 'vw' { @return $size }
+  @return rem($size);
 }
 
 @function base($args...) {
