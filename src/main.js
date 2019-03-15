@@ -1,5 +1,5 @@
 import './main.scss';
-import 'lazySizes';
+import 'lazysizes';
 import Gallery from './javascripts/gallery';
 import Router from './javascripts/router';
 import Tabs from './javascripts/tabs';
