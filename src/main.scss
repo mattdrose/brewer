@@ -35,15 +35,15 @@ a {
     padding: base(spacing) * 2.5;
     display: grid;
     grid-template-columns: 25vw 1fr;
-    grid-template-rows: 30vh 1fr;
+    grid-template-rows: 30% 70%;
     height: calc(100vh - #{base(spacing) * 5});
   }
 }
 
 @include media(large) {
   .layout__header {
-      grid-row: 1;
-      grid-column: 1 / 3;
+    grid-row: 1;
+    grid-column: 1 / 3;
   }
 
   .layout__main {
@@ -63,7 +63,7 @@ a {
 
   @include media(large) {
     display: grid;
-    grid-template-columns: 25vw 20vw 1fr 1fr;
+    grid-template-columns: 25vw 18vw 1fr 1fr;
   }
 }
 
@@ -106,7 +106,7 @@ a {
 @include media(large) {
   .main-inner {
     display: grid;
-    grid-template-columns: 20vw 1fr;
+    grid-template-columns: 18vw 1fr;
     grid-template-areas: 'column-1 column-2';
   }
 
