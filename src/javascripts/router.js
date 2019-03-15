@@ -9,21 +9,21 @@ class Router {
     if (location.pathname == route) { this.go(route); }
   }
 
-  go(route, callOnChange = true) {
+  go(route, triggerCallbacks = true) {
     if (!(route in this.routes)) { throw Error(`Couldn't find route: ${route}`); }
     history.pushState({}, this.routes[route].title, route);
     document.title = this.routes[route].title;
-    if (callOnChange) { this.onChange(); }
+    if (triggerCallbacks) { this.triggerCallbacks(); }
   }
 
-  onChange() {
+  triggerCallbacks() {
     if (location.pathname in this.routes) {
       this.routes[location.pathname].callback.call();
     }
   }
 
   init() {
-    window.onpopstate = this.onChange.bind(this);
+    window.onpopstate = this.triggerCallbacks.bind(this);
   }
 }
 
