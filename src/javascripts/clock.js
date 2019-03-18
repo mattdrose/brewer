@@ -1,7 +1,7 @@
 class Clock {
   constructor(refreshCallback = null) {
     this.refreshCallback = refreshCallback;
-    this.init(); 
+    this.init();
   }
 
   get now() {
@@ -16,7 +16,7 @@ class Clock {
   get prettyTime() {
     return this.est.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
   }
-  
+
   get nowUtc() {
     const nowUtcMilli = this.now.setHours(this.now.getUTCHours());
     return new Date(nowUtcMilli);

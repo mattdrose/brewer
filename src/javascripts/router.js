@@ -5,7 +5,7 @@ class Router {
   }
 
   on(route, title, callback) {
-    this.routes[route] = {title, callback};
+    this.routes[route] = { title, callback };
     if (location.pathname == route) { this.go(route); }
   }
 

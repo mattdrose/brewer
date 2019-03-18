@@ -19,10 +19,10 @@ module.exports = resources.images().then((images) => {
     },
     module: {
       rules: [
-        { 
-          test: /\.hbs$/, 
+        {
+          test: /\.hbs$/,
           loader: 'handlebars-loader',
-          query: { 
+          query: {
             helperDirs: [
               __dirname + '/helpers',
             ]
@@ -40,7 +40,7 @@ module.exports = resources.images().then((images) => {
         title: 'Homepage',
         filename: 'index.html',
         template: 'index.hbs',
-        templateParameters: {images},
+        templateParameters: { images },
         cache: false,
         inlineSource: '.(js|css)$',
         alwaysWriteToDisk: true,

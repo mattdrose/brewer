@@ -10,12 +10,12 @@ cloudinary.config({
 
 function resources() {
   return new Promise((resolve, reject) => {
-    cloudinary.v2.api.resources({ 
+    cloudinary.v2.api.resources({
       type: 'upload',
       prefix: 'brewer',
       context: true,
     }, (error, result) => {
-      if(error || !result.resources) {
+      if (error || !result.resources) {
         reject(error);
       } else {
         resolve(result.resources);
@@ -39,4 +39,4 @@ async function images() {
   })));
 }
 
-module.exports = {images};
+module.exports = { images };

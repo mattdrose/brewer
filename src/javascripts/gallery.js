@@ -1,4 +1,4 @@
-import {nodeListToArray} from './utils';
+import { nodeListToArray } from './utils';
 
 class Gallery {
   constructor(el) {
