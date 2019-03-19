@@ -1,3 +1,3 @@
 module.exports = function (value) {
-  return parseInt(value) + 1;
-};
+  return parseInt(value) + 1
+}

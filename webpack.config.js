@@ -1,13 +1,12 @@
-require('dotenv').config();
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
-const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
-const resources = require('./scripts/resources');
+require('dotenv').config()
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin')
+const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
+const resources = require('./scripts/resources')
 
 module.exports = resources.images().then((images) => {
   return {
@@ -15,7 +14,7 @@ module.exports = resources.images().then((images) => {
     entry: './main.js',
     mode: process.env.NODE_ENV || 'production',
     devServer: {
-      historyApiFallback: true,
+      historyApiFallback: true
     },
     module: {
       rules: [
@@ -24,15 +23,15 @@ module.exports = resources.images().then((images) => {
           loader: 'handlebars-loader',
           query: {
             helperDirs: [
-              __dirname + '/helpers',
+              path.join(__dirname, 'helpers')
             ]
-          },
+          }
         },
-        { test: /\.scss$/, use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'] },
-      ],
+        { test: /\.scss$/, use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'] }
+      ]
     },
     optimization: {
-      minimize: true,
+      minimize: true
     },
     plugins: [
       new MiniCssExtractPlugin(),
@@ -43,14 +42,14 @@ module.exports = resources.images().then((images) => {
         templateParameters: { images },
         cache: false,
         inlineSource: '.(js|css)$',
-        alwaysWriteToDisk: true,
+        alwaysWriteToDisk: true
       }),
       new HtmlWebpackHarddiskPlugin(),
       new HtmlWebpackInlineSourcePlugin(),
       new OptimizeCssAssetsPlugin(),
       new CopyPlugin([
-        { from: 'fonts', to: 'fonts' },
-      ]),
-    ],
-  };
+        { from: 'fonts', to: 'fonts' }
+      ])
+    ]
+  }
 })

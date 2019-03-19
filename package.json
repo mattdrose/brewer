@@ -12,8 +12,9 @@
   },
   "license": "MIT",
   "scripts": {
+    "build": "NODE_ENV=production webpack",
     "dev": "NODE_ENV=development webpack-dev-server",
-    "build": "NODE_ENV=production webpack"
+    "lint": "standard"
   },
   "devDependencies": {
     "cloudinary": "^1.13.2",
@@ -33,6 +34,7 @@
     "node-sass": "^4.11.0",
     "optimize-css-assets-webpack-plugin": "^4.0.3",
     "sass-loader": "^6.0.7",
+    "standard": "^12.0.1",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.1"
