@@ -199,6 +199,7 @@ a {
 .w-gallery__image {
   margin-left: - base(spacing);
   margin-right: - base(spacing);
+  min-height: 200px;
   animation: loading 1250ms infinite;
 
   @include media(large) {
@@ -213,6 +214,10 @@ a {
     margin-left: 0;
     margin-right: -5vw;
     margin-bottom: -5vw;
+  }
+
+  &.lazyloaded {
+    animation: none;
   }
 }
 
