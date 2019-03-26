@@ -26,7 +26,7 @@ function resources () {
 
 async function images () {
   return resources().then((data) => data.map((image) => ({
-    title: _.get(image, 'context.custom.title') || '',
+    title: _.get(image, 'context.custom.caption') || '',
     contribution: _.get(image, 'context.custom.contribution') || '',
     alt: _.get(image, 'context.custom.alt') || '',
     sizes: [400, 600, 800, 1000, 1200, 1400].reduce((acc, width) => {
