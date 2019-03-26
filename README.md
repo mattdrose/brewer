@@ -1,6 +1,8 @@
 # Brewer
 
-Brewer is an extremely lightweight portfolio website. It focuses on speed by using zero dependencies, inline styling, Cloudinary hosted assets, and Netlify deploys.
+Brewer is an extremely lightweight portfolio website. It focuses on speed by using zero dependencies, inline styling, [Cloudinary](https://cloudinary.com) hosted assets, and [Netlify](https://netlify.com) deploys.
+
+[See how the speed compares.](#performance-data)
 
 ## Local development
 
@@ -33,4 +35,18 @@ Once you've uploaded an image on Cloudinary, you can add the neccessary meta dat
 
 After opening the image, click on `Edit meta data` and add fields and content for `alt`, `contribution`, and `title`.
 
-![Screen shot](https://i.imgur.com/0kC1JPC.jpg)
+<img src="https://i.imgur.com/0kC1JPC.jpg" alt="Cloudinary screenshot" width="400"/>
+
+## Performance data
+
+These are the results of a [Webpage Speed Test](https://www.webpagetest.org/video/compare.php?tests=190326_SH_06e74586cc5a9ea35c4ddc3a924dda71,190326_77_f0a8a2c6737bed53d390b8b010afa397,190326_64_9ad4188bbcc337c9bafa0cf3becd9366,190326_W8_a4ded0d60680b2a99d403187f73074d7,190326_SQ_beab894590a48bfed0a77bbf3f2b0b93) against some popular portfolio websites (Wix, Squarespace, Awwward winners)
+
+Note: This doesn't use a large sample dataset. The compared websites were found on featured portfolio pages and selected based on similar functionality and design. Outside of that, the selection was completely random.
+
+<img src="https://i.imgur.com/fnic2rY.jpg" alt="Visual progress"/>
+
+<img src="https://i.imgur.com/6WvEQ91.jpg" alt="Visually complete"/>
+
+<img src="https://i.imgur.com/MftKqxY.jpg" alt="Speed index"/>
+
+<img src="https://i.imgur.com/B60Bico.jpg" alt="First meaningful paint"/>
