@@ -1,98 +1,90 @@
 <!doctype html>
 <html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{{t 'title'}}</title>
+    <link rel="preload" href="fonts/calibre-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <meta name="description" content="{{t 'description'}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="robots" content="noindex, nofollow">
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Michael Brewer | Designer from Toronto, Canada</title>
+  <body itemscope itemtype="https://schema.org/Person" class="layout">
+    <header class="layout__header header">
+      <section class="header__section header__section--1">
+        <h1 class="c-dark">{{t 'details.name'}}</h1>
+      </section>
 
-  <link rel="preload" href="fonts/calibre-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <meta name="description" content="Foo">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="robots" content="noindex, nofollow">
-</head>
+      <section class="header__section header__section--2">
+        <div>{{t 'subhead'}}</div>
+        <div>&copy;{{year}}</div>
+      </section>
 
-<body itemscope itemtype="https://schema.org/Person" class="layout">
-  <header class="layout__header header">
-    <section class="header__section header__section--1">
-      <h1 class="c-dark">Michael Brewer</h1>
-    </section>
+      <section itemprop="affiliation" itemscope itemtype="https://schema.org/Organization"
+        class="header__section header__section--3">
+        <div itemprop="legalName">{{t 'details.company'}}</div>
+        <div itemprop="location">{{t 'details.location'}}</div>
+        <div data-clock>0:00 AM</div>
+      </section>
 
-    <section class="header__section header__section--2">
-      <div>Simple &amp; Useful</div>
-      <div>&copy;2019</div>
-    </section>
+      <nav class="header__section header__section--4">
+        <ul class="menu c-dark" data-tabs>
+          <li class="menu__item"><a class="is-active" href="/" data-tabs-trigger>{{t 'menu.home'}}</a></li>
+          <li class="menu__item"><a href="/about" data-tabs-trigger>{{t 'menu.about'}}</a></li>
+          <li class="menu__item"><a href="/contact" data-tabs-trigger>{{t 'menu.contact'}}</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    <section itemprop="affiliation" itemscope itemtype="https://schema.org/Organization"
-      class="header__section header__section--3">
-      <div itemprop="legalName">Shopify</div>
-      <div itemprop="location">Toronto, Canada</div>
-      <div data-clock>0:00 AM</div>
-    </section>
+    <main class="main layout__main">
+      <section class="main__section gallery tabs-target is-active" data-tabs-target data-tabs-target-name='/' data-gallery
+        itemscope itemtype="http://schema.org/VisualArtwork">
+        {{#each images}}
+        <div class="gallery__item{{#unless @index}} is-active{{/unless}}" data-gallery-item
+          data-gallery-token="{{tokenize title}}">
+          <div class="main-inner">
+            <div class="w-gallery__image main-inner__content">
+              <img class="gallery__image lazyload" alt="{{alt}}" data-sizes="auto" data-src="{{sizes.400w}}" data-srcset="{{sizes.400w}} 400w,
+                  {{sizes.600w}} 600w, 
+                  {{sizes.800w}} 800w, 
+                  {{sizes.1000w}} 1000w, 
+                  {{sizes.1200w}} 1200w, 
+                  {{sizes.1400w}} 1400w" />
+            </div>
+            <div class="w-gallery__description main-inner__description">
+              <h3 class="gallery__heading" itemprop="name">{{title}}</h3>
+              <div class="gallery__description">{{contribution}}</div>
+              <div><span itemprop="position">{{increment @index}}</span> of {{../images.length}}</div>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </section>
 
-    <nav class="header__section header__section--4">
-      <ul class="menu c-dark" data-tabs>
-        <li class="menu__item"><a class="is-active" href="/" data-tabs-trigger>Work</a></li>
-        <li class="menu__item"><a href="/about" data-tabs-trigger>About</a></li>
-        <li class="menu__item"><a href="/contact" data-tabs-trigger>Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main class="main layout__main">
-    <section class="main__section gallery tabs-target is-active" data-tabs-target data-tabs-target-name='/' data-gallery
-      itemscope itemtype="http://schema.org/VisualArtwork">
-      {{#each images}}
-      <div class="gallery__item{{#unless @index}} is-active{{/unless}}" data-gallery-item
-        data-gallery-token="{{tokenize title}}">
+      <section class="main__section tabs-target" data-tabs-target data-tabs-target-name='/about'>
         <div class="main-inner">
-          <div class="w-gallery__image main-inner__content">
-            <img class="gallery__image lazyload" alt="{{alt}}" data-sizes="auto" data-src="{{sizes.400w}}" data-srcset="{{sizes.400w}} 400w,
-                {{sizes.600w}} 600w, 
-                {{sizes.800w}} 800w, 
-                {{sizes.1000w}} 1000w, 
-                {{sizes.1200w}} 1200w, 
-                {{sizes.1400w}} 1400w" />
-          </div>
-          <div class="w-gallery__description main-inner__description">
-            <h3 class="gallery__heading" itemprop="name">{{title}}</h3>
-            <div class="gallery__description">{{contribution}}</div>
-            <div><span itemprop="position">{{increment @index}}</span> of {{../images.length}}</div>
+          <h2 class="main-inner__description">{{t 'about.heading'}}</h2>
+          <p class="main-inner__content" itemprop="description">{{t 'about.content'}}</p>
+        </div>
+      </section>
+
+      <section class="main__section tabs-target" data-tabs-target data-tabs-target-name='/contact'>
+        <div class="main-inner">
+          <h2 class="main-inner__description">{{t 'about.heading'}}</h2>
+          <div class="main-inner__content h-p">
+            <div itemprop="name">{{t 'details.name'}}</div>
+            <div>
+              <a href="mailto:{{t 'details.email'}}" itemprop="email">{{t 'details.email'}}</a>
+            </div>
+            <div itemprop="telephone">{{t 'details.phone'}}</div>
           </div>
         </div>
-      </div>
-      {{/each}}
-    </section>
+      </section>
+    </main>
 
-    <section class="main__section tabs-target" data-tabs-target data-tabs-target-name='/about'>
-      <div class="main-inner">
-        <h2 class="main-inner__description">About</h2>
-        <p class="main-inner__content" itemprop="description">Michael Brewer handles the creation of elegant and useful
-          experiences across all mediums at Shopify in Toronto, Canada.</p>
-      </div>
-    </section>
-
-    <section class="main__section tabs-target" data-tabs-target data-tabs-target-name='/contact'>
-      <div class="main-inner">
-        <h2 class="main-inner__description">Contact</h2>
-        <div class="main-inner__content h-p">
-          <div itemprop="name">Michael Brewer</div>
-          <div>
-            <a href="mailto:michael.edmund@gmail.com" itemprop="email">michael.edmund@gmail.com</a>
-          </div>
-          <div itemprop="telephone">+1 416 333 7884</div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer layout__footer">
-    <a href="https://dribbble.com/michaelbrewer">See my work on Dribbble</a>
-  </footer>
-
-  <!-- <div class="gallery">
-    <button class="gallery__cta cta">View Work</button>
-  </div> -->
-</body>
-
+    <footer class="footer layout__footer">
+      <a href="https://dribbble.com/michaelbrewer">{{t 'dribbble'}}</a>
+    </footer>
+  </body>
 </html>

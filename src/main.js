@@ -4,6 +4,7 @@ import Gallery from './javascripts/gallery'
 import Router from './javascripts/router'
 import Tabs from './javascripts/tabs'
 import Clock from './javascripts/clock'
+import translations from '../locale/en'
 
 const $ = document.querySelector.bind(document)
 
@@ -19,13 +20,13 @@ tabs.init()
 
 // Router
 const router = new Router()
-router.on('/', 'Michael Brewer | Designer from Toronto, Canada', () => {
+router.on('/', translations.en.title, () => {
   tabs.current = '/'
 })
-router.on('/about', 'Michael Brewer | About', () => {
+router.on('/about', translations.en.about, () => {
   tabs.current = '/about'
 })
-router.on('/contact', 'Michael Brewer | Contact', () => {
+router.on('/contact', translations.en.contact, () => {
   tabs.current = '/contact'
 })
 
