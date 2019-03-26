@@ -184,9 +184,22 @@ a {
   }
 }
 
+@keyframes loading {
+  0% {
+    background-color: #fff;
+  }
+  50% {
+    background-color: #eee;
+  }
+  100% {
+    background-color: #fff;
+  }
+}
+
 .w-gallery__image {
   margin-left: - base(spacing);
   margin-right: - base(spacing);
+  animation: loading 1250ms infinite;
 
   @include media(large) {
     overflow: hidden;
@@ -207,6 +220,8 @@ a {
   display: block;
   width: 100%;
   margin-bottom: base(spacing) / 2;
+  transition: opacity 250ms;
+  opacity: 0;
 
   @include media(large) {
     width: auto;
@@ -215,6 +230,10 @@ a {
     min-height: 100%;
     object-fit: fill;
     margin-bottom: 0;
+  }
+
+  &.lazyloaded {
+    opacity: 1;
   }
 }
 

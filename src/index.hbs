@@ -8,6 +8,11 @@
     <meta name="description" content="{{t 'description'}}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="robots" content="noindex, nofollow">
+    <script>
+      let docClassList = document.documentElement.classList
+      docClassList.remove('no-js')
+      docClassList.add('js')
+    </script>
   </head>
 
   <body itemscope itemtype="https://schema.org/Person" class="layout">
@@ -44,12 +49,15 @@
         <div class="gallery__item{{#unless @index}} is-active{{/unless}}" data-gallery-item
           data-gallery-token="{{tokenize title}}">
           <div class="main-inner">
-            <div class="w-gallery__image main-inner__content">
-              <img class="gallery__image lazyload" alt="{{alt}}" data-sizes="auto" data-src="{{sizes.400w}}" data-srcset="{{sizes.400w}} 400w,
-                  {{sizes.600w}} 600w, 
-                  {{sizes.800w}} 800w, 
-                  {{sizes.1000w}} 1000w, 
-                  {{sizes.1200w}} 1200w, 
+            <div class="w-gallery__image lazyload main-inner__content">
+              <img class="gallery__image lazyload"
+                alt="{{alt}}"
+                data-sizes="auto"
+                data-srcset="{{sizes.400w}} 400w,
+                  {{sizes.600w}} 600w,
+                  {{sizes.800w}} 800w,
+                  {{sizes.1000w}} 1000w,
+                  {{sizes.1200w}} 1200w,
                   {{sizes.1400w}} 1400w" />
             </div>
             <div class="w-gallery__description main-inner__description">
