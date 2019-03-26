@@ -23,10 +23,10 @@ const router = new Router()
 router.on('/', translations.en.title, () => {
   tabs.current = '/'
 })
-router.on('/about', translations.en.about, () => {
+router.on('/about', translations.en.about.title, () => {
   tabs.current = '/about'
 })
-router.on('/contact', translations.en.contact, () => {
+router.on('/contact', translations.en.contact.title, () => {
   tabs.current = '/contact'
 })
 
