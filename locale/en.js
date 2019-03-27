@@ -1,10 +1,10 @@
 module.exports = {
   en: {
     title: 'Michael Brewer | Designer | Toronto, Canada',
-    description: `Michael Brewer handles the creation of elegant and useful 
+    description: `Michael Brewer handles the creation of elegant and useful
 experiences across all mediums at Shopify in Toronto, Canada.`,
     subhead: 'Simple & Useful',
-    dribbble: 'See my work on Dribbble',
+    dribbble: 'View more work on Dribbble',
     details: {
       name: 'Michael Brewer',
       company: 'Shopify',

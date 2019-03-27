@@ -17,11 +17,16 @@ body {
 a {
   color: inherit;
   text-decoration: underline;
+  transition: color 250ms;
 
   &:hover,
   &:active,
   &:focus {
-    font-weight: bold;
+    color: #383434;
+  }
+
+  &.no-underline {
+    text-decoration: none;
   }
 }
 
