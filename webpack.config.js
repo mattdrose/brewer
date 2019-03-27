@@ -1,5 +1,6 @@
 require('dotenv').config()
 const path = require('path')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin')
 const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
@@ -35,6 +36,7 @@ module.exports = resources.images().then((images) => {
       minimize: true
     },
     plugins: [
+      new FaviconsWebpackPlugin('./favicon.png'),
       new MiniCssExtractPlugin(),
       new HtmlWebpackPlugin({
         filename: 'index.html',
