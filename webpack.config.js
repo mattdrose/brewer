@@ -56,7 +56,8 @@ module.exports = resources.images().then((images) => {
       }),
       new OptimizeCssAssetsPlugin(),
       new CopyPlugin([
-        { from: 'fonts', to: 'fonts' }
+        { from: 'fonts', to: 'fonts' },
+        { from: 'robots.txt', to: 'robots.txt' }
       ])
     ]
   }
