@@ -34,14 +34,14 @@ class Clock {
   }
 
   get firstSundayInNovember () {
-    const november = new Date(`November, ${this.nowYear}`)
+    const november = new Date(`November 1, ${this.nowYear}`)
     const firstSundayOffset = (7 - november.getDay()) % 7
     const firstSundayMilli = november.setDate(1 + firstSundayOffset)
     return new Date(firstSundayMilli)
   }
 
   get secondSundayInMarch () {
-    const march = new Date(`March, ${this.nowYear}`)
+    const march = new Date(`March 1, ${this.nowYear}`)
     const secondSundayOffset = ((7 - march.getDay()) % 7) + 7
     const secondSundayMilli = march.setDate(1 + secondSundayOffset)
     return new Date(secondSundayMilli)
