@@ -4,7 +4,8 @@ module.exports = {
     description: `Michael Brewer handles the creation of elegant and useful
 experiences across all mediums at Shopify in Toronto, Canada.`,
     subhead: 'Simple & Useful',
-    dribbble: 'View more work on Dribbble',
+    dribbble: 'Dribbble',
+    behance: 'Behance',
     details: {
       name: 'Michael Brewer',
       company: 'Shopify',
