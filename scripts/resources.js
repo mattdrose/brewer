@@ -13,7 +13,8 @@ function resources () {
     cloudinary.v2.api.resources({
       type: 'upload',
       prefix: 'brewer',
-      context: true
+      context: true,
+      max_results: 500
     }, (error, result) => {
       if (error || !result.resources) {
         reject(error)
