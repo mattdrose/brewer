@@ -2,7 +2,7 @@ module.exports = {
   en: {
     title: 'Michael Brewer | Designer | Toronto, Canada',
     description: `Michael Brewer handles the creation of elegant and useful
-experiences across all mediums at Shopify in Toronto, Canada.`,
+experiences across all mediums at Shopify in Toronto, Ontario.`,
     subhead: 'Simple & Useful',
     dribbble: 'Dribbble',
     behance: 'Behance',
