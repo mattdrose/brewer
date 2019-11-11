@@ -8,7 +8,25 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET
 })
 
-function resources () {
+function cloudinaryVideos () {
+  return new Promise((resolve, reject) => {
+    cloudinary.v2.api.resources({
+      type: 'upload',
+      prefix: 'brewer',
+      context: true,
+      max_results: 500,
+      resource_type: 'video'
+    }, (error, result) => {
+      if (error || !result.resources) {
+        reject(error)
+      } else {
+        resolve(result.resources)
+      }
+    })
+  })
+}
+
+function cloudinaryImages () {
   return new Promise((resolve, reject) => {
     cloudinary.v2.api.resources({
       type: 'upload',
@@ -25,20 +43,41 @@ function resources () {
   })
 }
 
-async function images () {
-  return resources().then((data) => data.map((image) => ({
-    title: _.get(image, 'context.custom.caption') || '',
-    contribution: _.get(image, 'context.custom.contribution') || '',
-    alt: _.get(image, 'context.custom.alt') || '',
-    format: image.format,
-    sizes: [400, 600, 800, 1000, 1200, 1400].reduce((acc, width) => {
-      acc[`${width}w`] = cloudinary.url(image.public_id, {
-        secure: true,
-        width
-      })
-      return acc
-    }, {})
-  })))
+async function assets () {
+  return Promise.all([
+    cloudinaryImages(),
+    cloudinaryVideos()
+  ]).then((values) => {
+    [].concat(...values).map((asset) => ({
+      title: _.get(asset, 'context.custom.caption') || '',
+      contribution: _.get(asset, 'context.custom.contribution') || '',
+      alt: _.get(asset, 'context.custom.alt') || '',
+      format: asset.format,
+      sizes: [400, 600, 800, 1000, 1200, 1400].reduce((acc, width) => {
+        acc[`${width}w`] = cloudinary.url(asset.public_id, {
+          secure: true,
+          width
+        })
+        return acc
+      }, {})
+    }))
+  })
 }
 
-module.exports = { images }
+// async function images () {
+//   return resources().then((data) => data.map((image) => ({
+//     title: _.get(image, 'context.custom.caption') || '',
+//     contribution: _.get(image, 'context.custom.contribution') || '',
+//     alt: _.get(image, 'context.custom.alt') || '',
+//     format: image.format,
+//     sizes: [400, 600, 800, 1000, 1200, 1400].reduce((acc, width) => {
+//       acc[`${width}w`] = cloudinary.url(image.public_id, {
+//         secure: true,
+//         width
+//       })
+//       return acc
+//     }, {})
+//   })))
+// }
+
+module.exports = { assets }
