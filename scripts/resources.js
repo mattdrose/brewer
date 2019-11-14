@@ -48,7 +48,7 @@ async function assets () {
     cloudinaryImages(),
     cloudinaryVideos()
   ]).then((values) => {
-    [].concat(...values).map((asset) => ({
+    return [].concat(...values).map((asset) => ({
       title: _.get(asset, 'context.custom.caption') || '',
       contribution: _.get(asset, 'context.custom.contribution') || '',
       alt: _.get(asset, 'context.custom.alt') || '',
@@ -56,28 +56,13 @@ async function assets () {
       sizes: [400, 600, 800, 1000, 1200, 1400].reduce((acc, width) => {
         acc[`${width}w`] = cloudinary.url(asset.public_id, {
           secure: true,
-          width
+          width,
+          resource_type: asset.format === 'mp4' ? 'video' : 'image'
         })
         return acc
       }, {})
     }))
   })
 }
-
-// async function images () {
-//   return resources().then((data) => data.map((image) => ({
-//     title: _.get(image, 'context.custom.caption') || '',
-//     contribution: _.get(image, 'context.custom.contribution') || '',
-//     alt: _.get(image, 'context.custom.alt') || '',
-//     format: image.format,
-//     sizes: [400, 600, 800, 1000, 1200, 1400].reduce((acc, width) => {
-//       acc[`${width}w`] = cloudinary.url(image.public_id, {
-//         secure: true,
-//         width
-//       })
-//       return acc
-//     }, {})
-//   })))
-// }
 
 module.exports = { assets }
