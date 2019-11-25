@@ -53,6 +53,7 @@ async function assets () {
       contribution: _.get(asset, 'context.custom.contribution') || '',
       alt: _.get(asset, 'context.custom.alt') || '',
       format: asset.format,
+      isVideo: asset.format === 'mp4',
       sizes: [400, 600, 800, 1000, 1200, 1400].reduce((acc, width) => {
         acc[`${width}w`] = cloudinary.url(asset.public_id, {
           secure: true,
