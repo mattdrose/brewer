@@ -10,7 +10,7 @@ const CopyPlugin = require('copy-webpack-plugin')
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
 const resources = require('./scripts/resources')
 
-module.exports = resources.images().then((images) => {
+module.exports = resources.assets().then((assets) => {
   return {
     context: path.resolve(__dirname, 'src'),
     entry: './main.js',
@@ -42,7 +42,7 @@ module.exports = resources.images().then((images) => {
         filename: 'index.html',
         template: 'index.hbs',
         templateParameters: {
-          images,
+          assets,
           year: ((date) => date.getFullYear())(new Date())
         },
         cache: false,
