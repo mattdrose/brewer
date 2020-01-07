@@ -44,25 +44,37 @@
     <main class="main layout__main">
       <section class="main__section gallery tabs-target is-active" data-tabs-target data-tabs-target-name='/' data-gallery
         itemscope itemtype="http://schema.org/VisualArtwork">
-        {{#each images}}
+        {{#each assets}}
         <div class="gallery__item{{#unless @index}} is-active{{/unless}}" data-gallery-item
           data-gallery-token="{{tokenize title}}">
           <div class="main-inner">
-            <div class="w-gallery__image lazyload main-inner__content">
-              <img class="gallery__image lazyload"
-                alt="{{alt}}"
-                data-sizes="auto"
-                data-srcset="{{sizes.400w}}.{{format}} 400w,
-                  {{sizes.600w}}.{{format}} 600w,
-                  {{sizes.800w}}.{{format}} 800w,
-                  {{sizes.1000w}}.{{format}} 1000w,
-                  {{sizes.1200w}}.{{format}} 1200w,
-                  {{sizes.1400w}}.{{format}} 1400w" />
+            <div class="w-gallery__image main-inner__content">
+              {{#if isVideo}}
+                <video
+                  class="gallery__image lazyload"
+                  alt="{{alt}}"
+                  autoplay="true"
+                  loop="true"
+                  preload=""
+                  muted>
+                  <source type="video/mp4" src="{{sizes.1200w}}.{{format}}">
+                </video>
+              {{else}}
+                <img class="gallery__image lazyload"
+                  alt="{{alt}}"
+                  data-sizes="auto"
+                  data-srcset="{{sizes.400w}}.{{format}} 400w,
+                    {{sizes.600w}}.{{format}} 600w,
+                    {{sizes.800w}}.{{format}} 800w,
+                    {{sizes.1000w}}.{{format}} 1000w,
+                    {{sizes.1200w}}.{{format}} 1200w,
+                    {{sizes.1400w}}.{{format}} 1400w" />
+              {{/if}}
             </div>
             <div class="w-gallery__description main-inner__description">
               <h3 class="gallery__heading" itemprop="name">{{title}}</h3>
               <div class="gallery__description">{{contribution}}</div>
-              <div><span itemprop="position">{{increment @index}}</span> of {{../images.length}}</div>
+              <div><span itemprop="position">{{increment @index}}</span> of {{../assets.length}}</div>
             </div>
           </div>
         </div>
