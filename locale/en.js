@@ -21,7 +21,7 @@ experiences across all mediums at Shopify in Toronto, Canada.`,
     about: {
       title: 'Michael Brewer | About',
       heading: 'About',
-      content: `Michael Brewer is a Senior Designer resonsible for the creation of elegant and useful
+      content: `Michael Brewer is a Senior Designer responsible for the creation of elegant and useful
       experiences across all mediums at Shopify in Toronto, Canada.`
     },
     contact: {
