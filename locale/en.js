@@ -1,8 +1,8 @@
 module.exports = {
   en: {
     title: 'Michael Brewer | Designer | Toronto, Canada',
-    description: `Michael Brewer handles the creation of elegant and useful
-experiences across all mediums at Shopify in Toronto, Canada.`,
+    description: `Michael Brewer is a Senior Designer with a focus on 
+    creating impactful experiences through elegant art and creative direction, while currently working at Shopify.`,
     subhead: 'Elegant & Useful',
     dribbble: 'Dribbble',
     behance: 'Behance',
@@ -21,8 +21,8 @@ experiences across all mediums at Shopify in Toronto, Canada.`,
     about: {
       title: 'Michael Brewer | About',
       heading: 'About',
-      content: `Michael Brewer is a Senior Designer responsible for the creation of elegant and useful
-      experiences across both Art Direction and Creative Direction at Shopify in Toronto, Canada.`
+      content: `Michael Brewer is a Senior Designer with a focus on 
+      creating impactful experiences through elegant art and creative direction, while currently working at Shopify.`
     },
     contact: {
       title: 'Michael Brewer | Contact',
