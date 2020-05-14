@@ -22,7 +22,7 @@ module.exports = {
       title: 'Michael Brewer | About',
       heading: 'About',
       content: `Michael Brewer is a Senior Designer with a focus on 
-      creating impactful experiences through elegant creative and artisitc direction, currently working at Shopify.`
+      creating impactful experiences through elegant creative and artistic direction, currently working at Shopify.`
     },
     contact: {
       title: 'Michael Brewer | Contact',
