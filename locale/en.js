@@ -2,7 +2,7 @@ module.exports = {
   en: {
     title: 'Michael Brewer | Designer | Toronto, Canada',
     description: `Michael Brewer is a Senior Designer with a focus on 
-    creating impactful experiences through elegant creative and artisitc direction, currently working at Shopify.`,
+    creating impactful experiences through elegant creative and artistic direction, currently working at Shopify.`,
     subhead: 'Elegant & Useful',
     dribbble: 'Dribbble',
     behance: 'Behance',
