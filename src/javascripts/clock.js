@@ -22,7 +22,7 @@ class Clock {
   }
 
   get estOffset () {
-    if (this.now > this.secondSundayInMarch || this.now < this.firstSundayInNovember) {
+    if (this.now > this.secondSundayInMarch && this.now < this.firstSundayInNovember) {
       return -4
     } else {
       return -5

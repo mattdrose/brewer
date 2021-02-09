@@ -48,7 +48,11 @@ async function assets () {
     cloudinaryImages(),
     cloudinaryVideos()
   ]).then((values) => {
-    return [].concat(...values).map((asset) => ({
+    const imageArray = values[0];
+    const videoArray = values[1];
+    const combinedArray = imageArray.concat(videoArray);
+    const sortedValues = combinedArray.sort((a, b) => (a.public_id > b.public_id) ? 1 : -1)
+    return sortedValues.map((asset) => ({
       title: _.get(asset, 'context.custom.caption') || '',
       contribution: _.get(asset, 'context.custom.contribution') || '',
       alt: _.get(asset, 'context.custom.alt') || '',
