@@ -32,7 +32,7 @@
     "lazysizes": "^4.1.6",
     "lodash": "^4.17.11",
     "mini-css-extract-plugin": "^0.4.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^7.0.0",
     "optimize-css-assets-webpack-plugin": "^4.0.3",
     "sass-loader": "^6.0.7",
     "script-ext-html-webpack-plugin": "^2.1.3",
